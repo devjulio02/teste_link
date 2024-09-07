@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: 'Times New Romam';
+            }
+            a {
+                text-decoration: none;
+            }
+            .box {
+                font-size: 30px;
+                color: black;
+                height: 100vh;
+                width: 100vw;
+                border-radius: 10px;
+                background: rgb(160, 19, 113);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-weight: bolder;
+            }
+            .buttons-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 50px;
+                width: 250px;
+            }
+            button {
+                height: 40px;
+                width: 100px;
+                background: black;
+                color: white;
+                font-weight: 600;
+                border-radius: 5px;
+                border: 1px solid white;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+        <body>
+            <div class="box">
+                <p>Quer Namorar Comigo?</p>
+                <div class = "buttons-container">
+                    <button id="yes">Sim</button>
+                    <button id="no">Não</button>
+                </div>
+            </div>
+        </body>
+        <script>
+            let buttonNo = document.getElementById('no');
+            let buttonYes = document.getElementById('yes');
+            let height = window.innerHeight - 100;
+            let width = window.innerWidth - 100;
+
+            // Adicionando o evento de "mouseover" ao botão "Não"
+            buttonNo.addEventListener('mouseover', function () {
+                buttonNo.style.position = "absolute";
+                buttonNo.style.top = Math.random() * height + "px";
+                buttonNo.style.left = Math.random() * width + "px";
+            });
+
+            // Adicionando o evento de clique ao botão "Sim"
+            buttonYes.addEventListener('click', function() {
+                let confirmation = window.confirm("Ótima Escolha! :) Clique 'ok' Para Continuar.");
+                if (confirmation) {
+                    window.location.href = "https://youtu.be/izGwDsrQ1eQ?si=eQGBzQf3MUHlHk1k";
+                }
+            });
+        </script>
+</html>
